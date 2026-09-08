@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Ký tự đặc biệt, chèn hình ảnh, tạo danh sách và liên kết</title>
+</head>
+<body>
+
+    <!-- Tiêu đề chính -->
+    <h2 align="center" style="color: #CC0066;">Công ty Hoa tươi Nhân Ái</h2>
+
+    <!-- Chèn hình ảnh căn trái để chữ chạy quanh bên phải -->
+    <img src="hoa.jpg" alt="Hoa tươi" align="left" height="180" style="margin-right: 20px;">
+
+    <!-- Danh sách có thứ tự (1, 2) -->
+    <ol>
+        <!-- Mục 1: Giới thiệu -->
+        <li>
+            <font style="background-color: #CC0066; color: white; font-weight: bold;"> Giới thiệu </font>
+            <!-- Danh sách không thứ tự dạng ô vuông (square) -->
+            <ul type="square">
+                <li>Thành lập ngày 25/05/2007</li>
+                <li>Chuyên cung cấp các loại hoa tươi</li>
+                <li>Có trên 20 cửa hàng bán lẻ tại TP.HCM</li>
+                <li>Nhận kết giỏ hoa theo yêu cầu của khách hàng</li>
+            </ul>
+        </li>
+
+        <br>
+
+        <!-- Mục 2: Liên hệ -->
+        <li>
+            <font style="background-color: #CC0066; color: white; font-weight: bold;"> Liên hệ </font>
+            <!-- Danh sách không thứ tự dạng hình tròn rỗng (circle) -->
+            <ul type="circle">
+                <li>Điện thoại: 84-08-8351056</li>
+                <li>Địa chỉ: <i>227 Nguyễn Văn Cừ, Quận 5, TP.HCM</i></li>
+            </ul>
+        </li>
+    </ol>
+
+    <!-- Xóa thuộc tính căn lề của hình để các phần tiếp theo nằm ở dưới -->
+    <br clear="all">
+    <hr>
+
+    <!-- Phần chân trang với ký tự đặc biệt &copy; và đường dẫn liên kết -->
+    <p align="center">
+        &copy; Copyright: 
+        <a href="http://www.csc.hcmuns.edu.vn" target="_blank" style="font-weight: bold;">
+            Trung Tâm Tin Học - Đại Học Khoa Học Tự Nhiên TP.HCM
+        </a>
+    </p>
+
+</body>
+</html>
