@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border: 2px solid #000;
+            border-collapse: collapse;
+            width: 500px;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+        }
+        .header-title {
+            background-color: #008080;
+            color: #ffffff;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .btn-container {
+            text-align: center;
+            padding: 10px;
+        }
+        #resultMessage {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: red;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registerForm">
+        <table>
+            <tr>
+                <td colspan="2" class="header-title">
+                    Phiếu đăng ký tham gia chương trình khuyến mãi
+                </td>
+            </tr>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" id="fullname" size="30" value="Nguyễn Ngọc Quỳnh Nga"></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text" id="address" size="35" value="2B/a Hùng Vương, Q10"></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" id="phone" size="20" value="0909097506"></td>
+            </tr>
+            <tr>
+                <td>Phái</td>
+                <td>
+                    <input type="radio" name="gender" id="male" value="Nam"> <label for="male">Nam</label>
+                    <input type="radio" name="gender" id="female" value="Nữ" checked> <label for="female">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td>
+                    <select id="job">
+                        <option value="Bác sĩ">Bác sĩ</option>
+                        <option value="Kỹ sư">Kỹ sư</option>
+                        <option value="Giáo viên" selected>Giáo viên</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Chọn sản phẩm tham gia</td>
+                <td>
+                    <input type="checkbox" id="sp1" checked> <label for="sp1">Kem đánh răng</label><br>
+                    <input type="checkbox" id="sp2"> <label for="sp2">Bột giặt</label><br>
+                    <input type="checkbox" id="sp3"> <label for="sp3">Dầu gội đầu</label><br>
+                    <input type="checkbox" id="sp4"> <label for="sp4">Sữa tắm</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Số người dự đoán tham gia</td>
+                <td><input type="text" id="guessCount" size="15" value="250000"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <input type="button" value="Đồng ý" onclick="handleSubmit()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Điều khiển nhãn dùng để xuất thông báo -->
+    <div id="resultMessage"></div>
+
+    <script>
+        function handleSubmit() {
+            // Hiển thị câu thông báo ra nhãn (div id="resultMessage")
+            document.getElementById("resultMessage").innerText = "Bạn đã đăng ký thành công!!!";
+        }
+    </script>
+
+</body>
+</html>

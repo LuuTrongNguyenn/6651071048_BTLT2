@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền bán lẻ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border: 2px solid #000;
+            background-color: #f9f9f9;
+            width: 450px;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        .header-title {
+            background-color: #008080;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .btn-container {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 4px;
+        }
+        /* Style cho ô Thành tiền chỉ đọc */
+        input[readonly] {
+            background-color: #e9e9e9;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="calcForm">
+        <table>
+            <tr>
+                <td colspan="2" class="header-title">TÍNH TIỀN BÁN LẺ</td>
+            </tr>
+            <tr>
+                <td>Tên hàng:</td>
+                <td><input type="text" id="tenHang" size="30" value="Áo sơ mi"></td>
+            </tr>
+            <tr>
+                <td>Số lượng:</td>
+                <td><input type="text" id="soLuong" size="15" value="10"></td>
+            </tr>
+            <tr>
+                <td>Đơn giá:</td>
+                <td><input type="text" id="donGia" size="15" value="150000"></td>
+            </tr>
+            <tr>
+                <td>Thành tiền:</td>
+                <td><input type="text" id="thanhTien" size="15" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <input type="button" value="Tính tiền" onclick="tinhTien()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function tinhTien() {
+            // Lấy giá trị Số lượng và Đơn giá
+            var sl = parseFloat(document.getElementById("soLuong").value);
+            var dg = parseFloat(document.getElementById("donGia").value);
+
+            // Kiểm tra tính hợp lệ của dữ liệu nhập
+            if (isNaN(sl) || isNaN(dg)) {
+                alert("Vui lòng nhập số lượng và đơn giá hợp lệ!");
+                return;
+            }
+
+            // Tính thành tiền = Số lượng * Đơn giá
+            var tt = sl * dg;
+
+            // Xuất kết quả ra ô Thành tiền
+            document.getElementById("thanhTien").value = tt;
+        }
+    </script>
+
+</body>
+</html>

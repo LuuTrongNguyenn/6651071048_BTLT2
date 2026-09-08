@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển trên form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border: 2px solid #000;
+            background-color: #f0f0f0;
+            padding: 10px;
+            width: 300px;
+        }
+        td {
+            padding: 5px;
+        }
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #000;
+        }
+        .btn-container {
+            text-align: center;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: blue;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="loginForm">
+        <table>
+            <tr>
+                <td colspan="2" class="title">Đăng nhập</td>
+            </tr>
+            <tr>
+                <td>Mã người dùng:</td>
+                <td><input type="text" id="username"></td>
+            </tr>
+            <tr>
+                <td>Mật khẩu:</td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <input type="button" value="Đồng ý" onclick="handleLogin()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Điều khiển nhãn xuất nội dung -->
+    <div id="result"></div>
+
+    <script>
+        function handleLogin() {
+            // Lấy giá trị từ ô nhập Mã người dùng
+            var usernameValue = document.getElementById("username").value;
+            // Xuất nội dung ra điều khiển nhãn (div id="result")
+            document.getElementById("result").innerText = usernameValue;
+        }
+    </script>
+
+</body>
+</html>
